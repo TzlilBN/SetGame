@@ -1,0 +1,44 @@
+BONUS CHALLENGE FORM
+--------------------
+
+For each bonus challenge you have implemented, please replace the sentence "We are not entitled to this bonus."
+with a short description of:
+
+1. How it was implemented in your code
+2. Where it was used (in which class methods).
+3. How you tested that it is working correctly.
+
+--------------------
+
+1. Fully supporting all configuration fields and avoiding the use of magic numbers
+
+    a. we made sure we implemented the functions in our code solemly based on the configuratins file fields
+    b. it was used in the three classes Table, Dealer and player
+    c. trying to modify the fields Configurations and made sure the game worked smoothly
+
+--------------------
+
+2. Terminating all threads (that you created) gracefully and in reverse order to the order they were created in.
+
+    a. We implemented a Barrier at the end of the game so all the players threads will terminate by the order they were created
+    b. in the methods terminate() and terminateThreads() in Dealer
+    c. Checked in while the Debugging process that it holds.  
+
+--------------------
+
+3. Handling the config.turnTimeoutMillis value as follows:
+config.turnTimeoutMillis < 0: display nothing.
+config.turnTimeoutMillis = 0: display a timer since the last action (reshuffle or set collected).
+Note: in modes without a countdown timer the dealer must ensure there is always at least one legal set on the table.
+
+We are not entitled to this bonus.
+
+--------------------
+
+4. Making sure that the threads do not wake up unless some actual job needs to be done (e.g., a value needs to be
+changed on the display, key input needs to be handled, etc.) and the only threads created by you are:
+1 thread per player + 1 additional thread for non-human players.
+
+    a. We made sure every Thread does Specific and small amount of actions and while he cant do them, He waits.
+    b. You can see it in the code of the methods called in Run() in both Dealer and Player
+    c. We implemented a code on the basis that eveyone is awake as long as he has something to do and backed it up with multiple Testing. 
